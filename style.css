@@ -1,0 +1,219 @@
+/* Global */
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Barlow Semi Condensed', sans-serif !important;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+:root{
+    --radial-gradient: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+}
+
+.game_container{
+    background-image: var(--radial-gradient);
+    height: 100vh;
+}
+
+.game_container_inner{
+    margin:0px 30%;
+    padding: 2.2% 0px;
+}
+
+/* Score_board */
+
+.score_board{
+    border: 3px hsl(217, 16%, 45%) solid;
+    border-radius: 20px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.socre_counter{
+    text-align: center;
+    background-color: rgb(240, 240, 240);
+    padding: 5px 20px;
+    border-radius: 10px;
+}
+
+.socre_counter > h3{
+    color: hsl(229, 64%, 46%);
+    font-size: 14px;
+}
+
+.game_name{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.score{
+    font-size: 35px;
+    color: hsl(229, 25%, 31%);
+    font-weight: bold;
+}
+
+/* Game */
+
+.game{
+    position: absolute;
+    display: flex;
+    /* align-items: center;
+    justify-content: center; */
+    top: 35%;
+    left: 37%;
+    padding: 13%;
+    background-image: url(images/bg-triangle.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.game_container{
+    position:relative;
+}
+
+.rock{
+    position: absolute;
+    top: 60%;
+    left: 30%;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 50%;
+    border: 20px;
+    border-style: groove;
+    border-color: hsl(349, 71%, 52%);
+}
+
+.rock:hover{
+    background-color: #fff;
+    box-shadow: 1px 1px 50px rgb(238, 238, 238);
+}
+
+.rock:active{
+    animation: clicks 1s;
+    background-color: #DC2E4E;
+}
+
+.paper{
+    position: absolute;
+    top: -10%;
+    left: -15%;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 50%;
+    border: 20px;
+    border-style: groove;
+    border-color: hsl(230, 89%, 62%);
+}
+
+.paper:hover{
+    background-color: #fff;
+    box-shadow: 1px 1px 50px rgb(238, 238, 238);
+}
+
+.paper:active{
+    animation: clicks 1s;
+    background-color: #4865F4;
+}
+
+.scissors{
+    position: absolute;
+    top: -10%;
+    left: 70%;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 50%;
+    border: 20px;
+    border-style: groove;
+    border-color: hsl(39, 89%, 49%);
+}
+
+.scissors:hover{
+    background-color: #fff;
+    box-shadow: 1px 1px 50px rgb(238, 238, 238);
+}
+
+.scissors:active{
+    animation: clicks 1s;
+    background-color: #EC9E0E;
+}
+
+/* Rules */
+
+@keyframes enter {
+    from {transform: scale(0);}
+    to {transform: scale(1);}
+  }
+
+  @keyframes clicks {
+    0% {transform: scale(1);}
+    50% {transform: scale(.2);}
+    100% {transform: scale(1);}
+  }
+
+.rule{
+    visibility: hidden;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(48, 48, 48, 0.464);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rules_inner{
+    animation: enter 3s;
+    animation-timing-function: ease-in-out;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.rules_inner > h1{
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    padding: 10px 0px;
+}
+
+.rule_btn{
+    border: 2px hsl(217, 16%, 45%) solid;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    padding: 10px 15px;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #fff;
+    border-radius: 10px;
+    position: absolute;
+    top:92%;
+    left:92%;
+    transition: ease-in-out;
+}
+
+.rule_btn:hover{
+    transform: scale(1.1);
+    box-shadow: 1px 1px 5px 1px rgb(255, 255, 255);
+}
+
+/* To move them on click */
+
+/* .rock_moved{
+    position: absolute;
+    top: 60%;
+    left: 30%;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 50%;
+    border: 20px;
+    border-style: groove;
+    border-color: hsl(349, 71%, 52%);
+} */
